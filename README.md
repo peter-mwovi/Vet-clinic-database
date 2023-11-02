@@ -1,41 +1,4 @@
-# curriculum-databases-projects-template
-
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
-
-## Getting Started
-
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
+## Vet clinic
 
 <!-- TABLE OF CONTENTS -->
 
@@ -44,181 +7,118 @@ After you're finished please remove all the comments and instructions!
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  <!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Vet clinic database: animals table <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+**vet clinic database** project is a database management system designed for a veterinary clinic. It uses PostgreSQL to store and manage data related to animals, including their names, birth dates, weights, neutering status, and escape attempts. The project includes SQL scripts for creating the database schema, inserting data, and querying the data. It's designed to help the clinic keep track of their animal patients and manage their data efficiently.
 
-**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
 <details>
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
+  <ul>
+    <li><a href="https://www.postgresql.org/">SQL scripts</a></li>
+  </ul>
 </details>
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LIVE DEMO -->
-
+<!-- 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
 
-- [Live Demo Link](<replace-with-your-deployment-URL>)
+- [Project not yet deployed](<replace-with-your-deployment-URL>)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
-To get a local copy up and running, follow these steps.
+These instructions will guide you through the process of setting up and using the PostgreSQL database for the vet clinic database project.
 
 ### Prerequisites
 
-In order to run this project you need:
+Before you get started, make sure you have the following prerequisites installed:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- PostgreSQL: Ensure PostgreSQL is installed on your system. </br>
+- pgAdmin: (Optional) A popular GUI tool for managing PostgreSQL, recommended for easier database administration.
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git https://github.com/peter-mwovi/Vet-clinic-database.git
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
+- Create a new PostgreSQL database for your project. You can do this using the command-line tool or a GUI like pgAdmin.
+
 
 ```sh
-  cd my-project
-  gem install
+ createdb vet-clinic
 ```
---->
+
+- Import the initial schema and data (if applicable) into your database. You might find SQL dump files (*.sql) or other instructions in the project's db/ directory.
+
+```sh
+psql -d vet-clinic -a -f db/schema.sql
+```
+
+- Update your database connection settings in the project's configuration file, if necessary.
 
 ### Usage
 
-To run the project, execute the following command:
+Here are some common database operations and how to perform them:
 
-<!--
-Example command:
+Connecting to the Database
+To connect to your database using the command-line tool, use the following command:
 
 ```sh
-  rails server
+ psql -U root -d vet-clinic
 ```
---->
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
 ```sh
 
+  npx stylelint "**/*.{css,scss}" (--fix option)
+
+  npx eslint "**/*.{js,jsx}" (--fix option)
 ```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Peter Mwovi**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/peter-mwovi/)
+- Twitter: [@twitterhandle](https://twitter.com/mwovi_peter)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in peter-mwovi-57141a179/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -226,12 +126,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
+- [Development of all front end components]
+- [Development of back end logic]
+- [Testing of front and back end components]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -248,9 +145,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project, please support me with a like or a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,25 +153,7 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
+Thank you to my learning partners and the staff at Microverse.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -285,7 +162,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
