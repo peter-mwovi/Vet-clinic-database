@@ -14,33 +14,32 @@ SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 -- A) TRANSACTION: Update species column and ROLLBACK
 
 BEGIN;
-
 UPDATE animals SET species = 'unspecified';
 SELECT * FROM animals;
 ROLLBACK;
-
+SELECT * FROM animals;
 COMMIT;
 
 -- B) TRANSACTION: Update species column to 'digimon' and 'pokemon'and COMMIT the changes.
 
 BEGIN;
-
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
 SELECT * FROM animals;
-
 COMMIT;
+SELECT * FROM animals;
+
+
 
 -- C) TRANSACTION: DELETE all records from animals table and ROLLBACK changes.
 
 BEGIN;
-
 DELETE FROM animals;
 ROLLBACK;
-
+SELECT * FROM animals;
+COMMIT;
 SELECT * FROM animals;
 
-COMMIT;
 
 --D) TRANSACTION: 
 --   * Delete all animals born after Jan 1st, 2022;
@@ -77,7 +76,7 @@ SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
 
 -- D) Who escapes the most, neutered or not neutered animals?
-SELECT neutered, AVG(escape_attempts) FROM animals GROUP BY neutered;
+SELECT neutered, SUM(escape_attempts) FROM animals GROUP BY neutered;
 
 -- E) What is the minimum and maximum weight of each type of animal?
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
